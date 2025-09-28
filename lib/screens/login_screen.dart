@@ -9,7 +9,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF5F5DC), // Color crema/beige
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(32.0),
@@ -18,36 +18,59 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               // Sección superior (logo y título)
-              const Column(
+              Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  SizedBox(height: 60), // Espacio superior
-                  Icon(
-                    Icons.restaurant_menu,
-                    size: 100,
-                    color: Colors.black87,
+                  const SizedBox(height: 60), // Espacio superior
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.green[200], // Fondo verde claro
+                    child: Icon(
+                      Icons.restaurant_menu, // Icono de gorro de chef
+                      size: 60,
+                      color: Colors.green[800], // Color verde oscuro
+                    ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text(
-                    'Qué Comer Hoy',
+                    'Bienvenido a',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.green[800],
+                    ),
+                  ),
+                  Text(
+                    'QueComerHoy',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                      color: Colors.green[800],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Inicia sesión para personalizar tu
+experiencia nutricional',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black54,
                     ),
                   ),
                 ],
               ),
 
-              // Sección inferior (botón)
+              // Sección inferior (botones)
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black87,
-                      backgroundColor: Colors.grey[200],
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.green[700], // Fondo verde
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -59,24 +82,71 @@ class LoginScreen extends StatelessWidget {
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Aquí podríamos un logo de Google si lo tuviéramos en los assets
-                        // Por ahora, usamos un texto simple.
                         Text(
-                          'G', 
+                          'G',
                           style: TextStyle(
-                            fontSize: 24, 
-                            fontWeight: FontWeight.bold, 
-                            color: Colors.blue
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                         SizedBox(width: 10),
                         Text(
-                          'Iniciar sesión con Google',
+                          'Continuar con Google',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 15), // Espacio entre botones
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.black87,
+                      backgroundColor: Colors.white, // Fondo blanco
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        side: BorderSide(color: Colors.grey[300]!), // Borde gris
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    onPressed: () {
+                      // Acción para iniciar sesión con Facebook
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'f', // Placeholder para el logo de Facebook
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue, // Color de Facebook
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          'Continuar con Facebook',
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  const SizedBox(height: 20), // Espacio antes del texto "sin cuenta"
+                  TextButton(
+                    onPressed: () {
+                      // Acción para continuar sin cuenta
+                    },
+                    child: Text(
+                      'Continuar sin cuenta',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.green[700], // Color verde
+                      ),
                     ),
                   ),
                   const SizedBox(height: 40), // Espacio inferior
