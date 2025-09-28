@@ -101,41 +101,7 @@ experiencia nutricional',
                       ],
                     ),
                   ),
-                  const SizedBox(height: 15), // Espacio entre botones
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black87,
-                      backgroundColor: Colors.white, // Fondo blanco
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        side: BorderSide(color: Colors.grey[300]!), // Borde gris
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                    ),
-                    onPressed: () {
-                      // Acción para iniciar sesión con Facebook
-                    },
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'f', // Placeholder para el logo de Facebook
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue, // Color de Facebook
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          'Continuar con Facebook',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  
                   const SizedBox(height: 20), // Espacio antes del texto "sin cuenta"
                   TextButton(
                     onPressed: () {
