@@ -1,0 +1,41 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "que-comer-hoy-425e4",
+          "appId": "1:704467015877:android:6baf56844fe3498942f8ac",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "que-comer-hoy-425e4",
+          "appId": "1:704467015877:ios:37e3ae2dd7bdbda542f8ac",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "que-comer-hoy-425e4",
+          "appId": "1:704467015877:ios:37e3ae2dd7bdbda542f8ac",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "que-comer-hoy-425e4",
+          "configurations": {
+            "android": "1:704467015877:android:6baf56844fe3498942f8ac",
+            "ios": "1:704467015877:ios:37e3ae2dd7bdbda542f8ac",
+            "macos": "1:704467015877:ios:37e3ae2dd7bdbda542f8ac",
+            "web": "1:704467015877:web:38ef258392ab80fb42f8ac",
+            "windows": "1:704467015877:web:92d196d204f7302f42f8ac"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "704467015877",
+    "project_id": "que-comer-hoy-425e4",
+    "storage_bucket": "que-comer-hoy-425e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704467015877:android:6baf56844fe3498942f8ac",
+        "android_client_info": {
+          "package_name": "com.example.que_comer_hoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704467015877-6qk6m6qmbpaer73rsjt6pej573o4gr3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDHPnuCZEp5w0SxWy5kjQspZAwh1WChSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704467015877-6qk6m6qmbpaer73rsjt6pej573o4gr3s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704467015877-gv3855351dfrc00mg0q2rlgbtgam1lk0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.queComerHoy"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704467015877:android:7fc0f2005acf0aa342f8ac",
+        "android_client_info": {
+          "package_name": "com.example.quecomerhoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704467015877-c38sa5p3octoogmj5leqcl30gos33gl2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quecomerhoy",
+            "certificate_hash": "05a01316fbcf04a20023aa72dd867bf0d819754d"
+          }
+        },
+        {
+          "client_id": "704467015877-6qk6m6qmbpaer73rsjt6pej573o4gr3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDHPnuCZEp5w0SxWy5kjQspZAwh1WChSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704467015877-6qk6m6qmbpaer73rsjt6pej573o4gr3s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704467015877-gv3855351dfrc00mg0q2rlgbtgam1lk0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.queComerHoy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

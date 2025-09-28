@@ -45,3 +45,8 @@ app.*.map.json
 /android/app/release
 .vscode/settings.json
 pront.txt
+assets/home_page.png
+assets/login.png
+assets/perfil.png
+assets/receta_sugerida.png
+.env
