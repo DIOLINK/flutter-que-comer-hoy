@@ -9,10 +9,13 @@ class AuthWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("AuthWrapper: Building...");
     return StreamBuilder<User?>(
       stream: AuthService().user,
       builder: (context, snapshot) {
+        print("AuthWrapper: StreamBuilder snapshot: ");
         if (snapshot.connectionState == ConnectionState.waiting) {
+          print("AuthWrapper: Showing CircularProgressIndicator");
           return const Scaffold(
             body: Center(
               child: CircularProgressIndicator(),
@@ -20,8 +23,10 @@ class AuthWrapper extends StatelessWidget {
           );
         }
         if (snapshot.hasData) {
+          print("AuthWrapper: User logged in, showing HomeScreen");
           return HomeScreen(user: snapshot.data!);
         } else {
+          print("AuthWrapper: No user, showing LoginScreen");
           return LoginScreen();
         }
       },

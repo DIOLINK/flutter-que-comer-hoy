@@ -52,8 +52,8 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Inicia sesión para personalizar tu
-experiencia nutricional',
+                    '''Inicia sesión para personalizar tu
+experiencia nutricional''',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
@@ -77,6 +77,7 @@ experiencia nutricional',
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     onPressed: () async {
+                      print("LoginScreen: Google button pressed");
                       await _auth.signInWithGoogle();
                     },
                     child: const Row(

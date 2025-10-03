@@ -64,6 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '704467015877',
     projectId: 'que-comer-hoy-425e4',
     storageBucket: 'que-comer-hoy-425e4.firebasestorage.app',
+    androidClientId: '704467015877-c38sa5p3octoogmj5leqcl30gos33gl2.apps.googleusercontent.com',
+    iosClientId: '704467015877-gv3855351dfrc00mg0q2rlgbtgam1lk0.apps.googleusercontent.com',
     iosBundleId: 'com.example.queComerHoy',
   );
 
@@ -73,6 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '704467015877',
     projectId: 'que-comer-hoy-425e4',
     storageBucket: 'que-comer-hoy-425e4.firebasestorage.app',
+    androidClientId: '704467015877-c38sa5p3octoogmj5leqcl30gos33gl2.apps.googleusercontent.com',
+    iosClientId: '704467015877-gv3855351dfrc00mg0q2rlgbtgam1lk0.apps.googleusercontent.com',
     iosBundleId: 'com.example.queComerHoy',
   );
 
@@ -85,4 +89,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'que-comer-hoy-425e4.firebasestorage.app',
     measurementId: 'G-T82HEP1XJQ',
   );
+
 }

@@ -3,35 +3,42 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: []);
+  final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
 
   // Stream para escuchar cambios en el estado de autenticación
-  Stream<User?> get user => _auth.authStateChanges();
+  Stream<User?> get user {
+    print("AuthService: user stream requested");
+    return _auth.authStateChanges();
+  }
 
   // Iniciar sesión con Google
   Future<UserCredential?> signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      print("AuthService: Attempting Google Sign-In");
+      final GoogleSignInAccount? googleUser = await _googleSignIn.authenticate();
+
       if (googleUser == null) {
-        // El usuario canceló el flujo de inicio de sesión
+        print("AuthService: Google Sign-In cancelled by user.");
         return null;
       }
 
+      print("AuthService: Google Sign-In successful, getting auth details.");
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
+      print("AuthService: Signing in with credential");
       return await _auth.signInWithCredential(credential);
     } catch (e) {
-      print(e);
+      print("AuthService: Error during Google Sign-In: $e");
       return null;
     }
   }
 
   // Cerrar sesión
   Future<void> signOut() async {
+    print("AuthService: Signing out");
     await _auth.signOut();
     await _googleSignIn.signOut();
   }
