@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:que_comer_hoy/screens/home_screen.dart';
 import 'package:que_comer_hoy/services/auth_service.dart';
+import 'package:que_comer_hoy/theme/theme.dart';
 
+// ...existing code...
 class LoginScreen extends StatelessWidget {
   final AuthService _auth = AuthService();
 
@@ -9,7 +12,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5DC), // Color crema/beige
+      backgroundColor: beigeColor, // Color crema/beige
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(32.0),
@@ -55,10 +58,7 @@ class LoginScreen extends StatelessWidget {
                     '''Inicia sesión para personalizar tu
 experiencia nutricional''',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black54,
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.black54),
                   ),
                 ],
               ),
@@ -94,19 +94,58 @@ experiencia nutricional''',
                         SizedBox(width: 10),
                         Text(
                           'Continuar con Google',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
                       ],
                     ),
                   ),
-                  
-                  const SizedBox(height: 20), // Espacio antes del texto "sin cuenta"
+
+                  const SizedBox(
+                    height: 20,
+                  ), // Espacio antes del texto "sin cuenta"
                   TextButton(
-                    onPressed: () {
-                      // Acción para continuar sin cuenta
+                    onPressed: () async {
+                      final userCredential = await _auth.signInAnonymously();
+                      if (userCredential != null &&
+                          userCredential.user != null) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HomeScreen(user: userCredential.user!),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor:
+                                sandYellow, // Color de fondo personalizado
+                            content: Row(
+                              children: [
+                                const Icon(
+                                  Icons.warning_amber_rounded,
+                                  color: darkText,
+                                ),
+                                const SizedBox(width: 12),
+                                const Expanded(
+                                  child: Text(
+                                    'No se pudo iniciar sesión como invitado',
+                                    style: TextStyle(
+                                      color:
+                                          darkText, // Color de texto personalizado
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            behavior: SnackBarBehavior.floating,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                        );
+                      }
                     },
                     child: Text(
                       'Continuar sin cuenta',
