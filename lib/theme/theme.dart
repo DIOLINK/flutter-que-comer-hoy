@@ -6,6 +6,7 @@ const Color lightGreenCard = Color(0xFFE8F5E9);
 const Color sandYellow = Color(0xFFDDCB97);
 const Color offWhite = Color(0xFFF7F5F2);
 const Color darkText = Color(0xFF212121);
+const Color beigeColor = Color(0xFFF5F5DC);
 
 // TEMA CLARO
 final ThemeData lightTheme = ThemeData(
