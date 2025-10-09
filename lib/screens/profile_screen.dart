@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import 'package:que_comer_hoy/models/user_profile.dart';
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // For now, we use the mock user profile.
+    // Later, this will come from a stream or future from Firebase.
+    final userProfile = mockUserProfile;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Perfil'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: userProfile.photoUrl.isNotEmpty
+                  ? NetworkImage(userProfile.photoUrl)
+                  : null,
+              child: userProfile.photoUrl.isEmpty
+                  ? const Icon(Icons.person, size: 50)
+                  : null,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              userProfile.name,
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              userProfile.email,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
