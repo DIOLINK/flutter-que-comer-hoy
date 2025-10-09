@@ -11,19 +11,25 @@ class AuthService {
     return _auth.authStateChanges();
   }
 
+  // Iniciar sesión anónima
+  Future<UserCredential?> signInAnonymously() async {
+    try {
+      print("AuthService: Attempting anonymous sign-in");
+      return await _auth.signInAnonymously();
+    } catch (e) {
+      print("AuthService: Error during anonymous sign-in: $e");
+      return null;
+    }
+  }
+
   // Iniciar sesión con Google
   Future<UserCredential?> signInWithGoogle() async {
     try {
       print("AuthService: Attempting Google Sign-In");
-      final GoogleSignInAccount? googleUser = await _googleSignIn.authenticate();
-
-      if (googleUser == null) {
-        print("AuthService: Google Sign-In cancelled by user.");
-        return null;
-      }
+      final GoogleSignInAccount googleUser = await _googleSignIn.authenticate();
 
       print("AuthService: Google Sign-In successful, getting auth details.");
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
         idToken: googleAuth.idToken,
       );
