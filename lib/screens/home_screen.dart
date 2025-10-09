@@ -1,14 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:que_comer_hoy/screens/plan_screen.dart';
 import 'package:que_comer_hoy/screens/profile_screen.dart';
 import 'package:que_comer_hoy/screens/search_screen.dart';
-import 'package:que_comer_hoy/screens/plan_screen.dart';
 import 'package:que_comer_hoy/services/auth_service.dart';
+import 'package:que_comer_hoy/theme/theme.dart'; // Importa los colores y temas
 
 class HomeScreen extends StatefulWidget {
   final User user;
 
-  const HomeScreen({Key? key, required this.user}) : super(key: key);
+  const HomeScreen({super.key, required this.user});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -42,22 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Buscar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Plan',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Perfil',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Buscar'),
+          BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: 'Plan'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -74,7 +63,7 @@ class HomeTab extends StatelessWidget {
   final User user;
   final AuthService _auth = AuthService();
 
-  HomeTab({Key? key, required this.user}) : super(key: key);
+  HomeTab({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -87,12 +76,11 @@ class HomeTab extends StatelessWidget {
             onPressed: () async {
               await _auth.signOut();
             },
-          )
+          ),
         ],
       ),
-      body: Center(
-        child: Text('Bienvenido, ${user.displayName ?? 'Usuario'}'),
-      ),
+      backgroundColor: beigeColor,
+      body: Center(child: Text('Bienvenido, ${user.displayName ?? 'Usuario'}')),
     );
   }
 }

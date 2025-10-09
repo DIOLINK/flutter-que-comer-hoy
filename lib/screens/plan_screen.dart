@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:que_comer_hoy/theme/theme.dart';
 
 class PlanScreen extends StatelessWidget {
-  const PlanScreen({Key? key}) : super(key: key);
+  const PlanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Plan'),
-      ),
-      body: const Center(
-        child: Text('Plan Screen'),
-      ),
+      appBar: AppBar(title: const Text('Plan')),
+      backgroundColor: beigeColor,
+      body: const Center(child: Text('Plan Screen')),
     );
   }
 }

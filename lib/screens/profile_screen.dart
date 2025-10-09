@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:que_comer_hoy/models/user_profile.dart';
+import 'package:que_comer_hoy/theme/theme.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +12,8 @@ class ProfileScreen extends StatelessWidget {
     final userProfile = mockUserProfile;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Perfil'),
-      ),
+      appBar: AppBar(title: const Text('Perfil')),
+      backgroundColor: beigeColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
