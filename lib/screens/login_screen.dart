@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:que_comer_hoy/screens/home_screen.dart';
 import 'package:que_comer_hoy/services/auth_service.dart';
 import 'package:que_comer_hoy/theme/theme.dart';
 
@@ -108,14 +107,6 @@ experiencia nutricional''',
                       final userCredential = await _auth.signInAnonymously();
                       if (userCredential != null &&
                           userCredential.user != null) {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                HomeScreen(user: userCredential.user!),
-                          ),
-                        );
-                      } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             backgroundColor:
