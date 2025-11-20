@@ -5,6 +5,7 @@ import 'package:que_comer_hoy/screens/profile_screen.dart';
 import 'package:que_comer_hoy/screens/search_screen.dart';
 import 'package:que_comer_hoy/services/auth_service.dart';
 import 'package:que_comer_hoy/theme/theme.dart'; // Importa los colores y temas
+import 'package:que_comer_hoy/widgets/recipe_card.dart';
 
 class HomeScreen extends StatefulWidget {
   final User user;
@@ -80,7 +81,20 @@ class HomeTab extends StatelessWidget {
         ],
       ),
       backgroundColor: beigeColor,
-      body: Center(child: Text('Bienvenido, ${user.displayName ?? 'Usuario'}')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RecipeCard(
+            title: 'Ensalada mediterránea',
+            description: 'Rica en omega-3 y antioxidantes',
+            time: '15 min',
+            servings: '2 personas',
+            icon: Icons.restaurant_menu,
+          ),
+          const SizedBox(height: 16),
+          Text('Bienvenido, ${user.displayName ?? 'Usuario'}'),
+        ],
+      ),
     );
   }
 }
